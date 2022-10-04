@@ -91,7 +91,7 @@ document.addEventListener("DOMContentLoaded", function(){
         //comparar las imagenes despues de que de click dos veces
         if(nombreImg.length === 2){
             setTimeout(compararImagenes, 300)
-    }
+        }
     }
 
     function compararImagenes(){
@@ -102,16 +102,21 @@ document.addEventListener("DOMContentLoaded", function(){
         let opcionUno = nombreImg[0];
         let opcionDos = nombreImg[1];
         //comparar las imagenes
-        if(opcionUno == opcionDos){
-            alert("Acertaste ✨✨✨😉😉😉");
-            imagenesActuales[numeroImg[0]].setAttribute("src","imagenes/verdadero.png");
-            imagenesActuales[numeroImg[1]].setAttribute("src","imagenes/verdadero.png")
-        }else{
-            alert("Fallaste");
-            imagenesActuales[numeroImg[0]].setAttribute("src","imagenes/interrogacion.jpg");
-            imagenesActuales[numeroImg[1]].setAttribute("src","imagenes/interrogacion.jpg")
-        }
-
+            if(opcionUno == opcionDos){
+                if(opcionUno!=opcionUno){
+                    imagenesActuales[numeroImg[0]].setAttribute("src","imagenes/verdadero.png");
+                    imagenesActuales[numeroImg[1]].setAttribute("src","imagenes/verdadero.png");
+                    alert(" ✨✨✨ ACERTASTE!!!! ✨✨✨");
+                }else{
+                    alert("Selecceiona otra imagen") 
+                }
+            }else{
+                    imagenesActuales[numeroImg[0]].setAttribute("src","imagenes/interrogacion.jpg");
+                    imagenesActuales[numeroImg[1]].setAttribute("src","imagenes/interrogacion.jpg");
+                    alert("❌❌❌ FALLASTE🎂 ❌❌❌");
+            }
+            
+        
         numeroImg = [];
         nombreImg = [];
     }
